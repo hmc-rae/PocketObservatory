@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "POL_tester/1.0.0": {
+        "dependencies": {
+          "PocketObservatoryLibrary": "1.0.0.0"
+        },
+        "runtime": {
+          "POL_tester.dll": {}
+        }
+      },
+      "PocketObservatoryLibrary/1.0.0.0": {
+        "runtime": {
+          "PocketObservatoryLibrary.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "POL_tester/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PocketObservatoryLibrary/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
