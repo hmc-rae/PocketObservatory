@@ -9,6 +9,8 @@ References:
 
 										EXTERNAL LIBRARIES
 https://github.com/JamesNK/Newtonsoft.Json			JSON implementation for C#, used in backend.
+https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-5.0	ASP.NET, used for server stuff.
+
 
 										RESEARCH
 https://www.theplanetstoday.com/ 					(verification purposes)
