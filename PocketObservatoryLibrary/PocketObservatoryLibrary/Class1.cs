@@ -16,9 +16,9 @@ namespace PocketObservatoryLibrary
         /// <summary>
         /// Please call me (:
         /// </summary>
-        public static void Initialize(string name)
+        public static void Initialize()
         {
-            Functions.setupPlanets(name);
+            Functions.setupPlanets();
         }
     }
 
@@ -39,7 +39,7 @@ namespace PocketObservatoryLibrary
         {
             public double meanDistance;  //Average distance from the sun. Once we get set up, I'll expand it to include perihelion and aphelion.
             private double orbitalPeriod; //Time it takes to orbit the sun once, in earth years (365.25 days)
-            private long orbitalPeriodSeconds;
+            private long orbitalPeriodSeconds; //Time in seconds to orbit the sun once.
 
             public double OrbitalPeriod
             {
@@ -53,11 +53,12 @@ namespace PocketObservatoryLibrary
                     //calc seconds
                 }
             }
-            public double orbitalOffset; //Value used to offset the start from 0 radians at epoch.
+            public double orbitalOffset; //Value used to offset the start from 0 radians at the LOCAL epoch (1st jan @ midnight, 2018)
 
             public double currentRadians; //Current angular difference from 0 to sun
 
             public string name; //Go figure.
+            public int order; //The order from the sun it is.
             public bool ignore; //Whether or not to ignore this file.
 
             public PlanetExtension additionalData; //Contains all extra data.
@@ -84,18 +85,19 @@ namespace PocketObservatoryLibrary
     
     public static class Functions
     {
-        public static void setupPlanets(string name = "planets.json")
+        public static void setupPlanets()
         {
-            StreamReader r = new StreamReader(name);
+            StreamReader r = new StreamReader("planets.json");
             String temp = r.ReadToEnd();
             r.Close();
             Globals.planetCore = JsonConvert.DeserializeObject<Objects.PlanetCore>(temp);
         }
+
     }
 
     public static class Constants
     {
-
+        public const long LocalEpoch = 1514725200;
     }
 
     public static class Globals
