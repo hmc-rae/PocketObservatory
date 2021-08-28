@@ -1,0 +1,1 @@
+copy PocketObservatoryLibrary/PocketObservatoryLibrary/planets.json POL_tester/POL_tester

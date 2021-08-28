@@ -8,6 +8,7 @@ namespace POL_tester
         {
             PocketObservatoryLibrary.InterfaceFunctions.Initialize();
             Console.WriteLine(PocketObservatoryLibrary.InterfaceFunctions.test());
+
         }
     }
 }

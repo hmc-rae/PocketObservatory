@@ -3,9 +3,19 @@
     {
       "name": "Earth",
       "ignore": true,
+      "order": 3,
       "meanDistance": 0,
       "OrbitalPeriod": 1.0,
       "orbitalOffset": 0.0
+    },
+
+    {
+      "name": "Mars",
+      "ignore": false,
+      "order": 4,
+      "meanDistance": 0,
+      "OrbitalPeriod": 1.8805,
+      "orbitalOffset": 0.8623168769
     }
   ]
 }
