@@ -8,7 +8,18 @@ import Camera from './src/views/Observatory';
 import VisiblePlanets from './src/views/VisiblePlanets';
 import AllPlanets from './src/views/AllPlanets';
 
-// const [planets, setPlanets] = useState([]);
+const Tab = createMaterialBottomTabNavigator();
+
+
+const App = () => {
+
+  const [planets, setPlanets] = useState(
+  {"allPlanets":
+      [{"name":"Mercury","refID":0,"order":1,"color":"","visible":false},
+      {"name":"Venus","refID":1,"order":2,"color":"","visible":false},
+      {"name":"Earth","refID":2,"order":3,"color":"","visible":false},
+      {"name":"Mars","refID":3,"order":4,"color":"","visible":false},
+      {"name":"Jupiter","refID":4,"order":5,"color":"","visible":true}]});
 
 // useEffect(() => {
 //   const getPlanets = async () => {
@@ -24,11 +35,6 @@ import AllPlanets from './src/views/AllPlanets';
 //   return data;
 // }
 
-const Tab = createMaterialBottomTabNavigator();
-
-
-const App = () => {
-
   return (
       <NavigationContainer>
         <Tab.Navigator 
@@ -37,7 +43,7 @@ const App = () => {
         barStyle = {{backgroundColor: '#130D45'}}
         >
        
-       <Tab.Screen name = "VisiblePlanets"
+       <Tab.Screen name = "Viewable Planets"
           component = {() => <VisiblePlanets planets = {planets.allPlanets.filter((planet) => planet.visible)}/>}
         options={{
           tabBarIcon: ({ color }) => (
@@ -54,7 +60,7 @@ const App = () => {
           ),
         }}
           />
-        <Tab.Screen name = "AllPlanets"
+        <Tab.Screen name = "All Planets"
           component = {() => <AllPlanets planets = {planets.allPlanets}/>}
           options={{
           tabBarIcon: ({ color }) => (

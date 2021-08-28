@@ -11,7 +11,7 @@ export default function VisiblePlanets( {planets} ) {
       <Text style={styles.title}>Visible Planets</Text>
       <FlatList
       data = {planets}
-      renderItem = {({item: planet}) => (<PlanetCard planet = {planet}/>)}/>
+      renderItem = {({item: planet}) => (<PlanetCard planet = {planet} all = {false}/>)}/>
     </View>
   );
 }

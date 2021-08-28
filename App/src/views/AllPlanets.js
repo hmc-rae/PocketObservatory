@@ -11,7 +11,7 @@ export default function AllPlanets( {planets} ) {
       <Text style={styles.title}>All Planets</Text>
       <FlatList
       data = {planets}
-      renderItem = {({item: planet}) => (<PlanetCard planet = {planet}/>)}/>
+      renderItem = {({item: planet}) => (<PlanetCard planet = {planet} all = {true}/>)}/>
     </View>
   );
 }
