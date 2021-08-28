@@ -24,17 +24,13 @@ FUNCTIONS:
 	Given the unique ID of one of the tracked planets, as well as GPS and gyroscope values, finds the X, Y and Z difference to the planet.
 	4th return value 'val' will be 0 if the planet is not visible.
 	
-		GetPlanets()
+		GetAll(double lat, double lon)
 			returns string
 	
-	Returns a JSON string containing name of planet, order of planet, planetID, etc.
+	Returns a JSON string containing name of planet, order of planet, planetID, and whether it's visible or not. Earth is always tagged as not visible.
+	Must take the latitude & longitude of the phone when querying.
 	
 		GetPlanet(int planetID)
 			returns string
 	
 	Returns a JSON string containing in-depth planet data.
-	
-		GetVisiblePlanets(double lat, double lon)
-			returns string
-			
-	Returns a JSON string containing the details of visible planets.

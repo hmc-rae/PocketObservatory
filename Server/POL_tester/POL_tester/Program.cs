@@ -7,7 +7,7 @@ namespace POL_tester
         static void Main(string[] args)
         {
             PocketObservatoryLibrary.InterfaceFunctions.Initialize();
-            Console.WriteLine(PocketObservatoryLibrary.InterfaceFunctions.test());
+            Console.WriteLine(PocketObservatoryLibrary.InterfaceFunctions.GetAll(-35, 153));
 
         }
     }
