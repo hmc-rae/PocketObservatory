@@ -12,12 +12,6 @@ FUNCTIONS:
 	
 	Forces an update of the planet positions.
 	
-		TrackPlanet(double x, double y, double z, double lat, double lon)
-			returns [ double x, double y, double z, double val ]
-	
-	Given GPS latitude & longitude as well as X, Y and Z gyroscope values, returns X, Y and Z difference to find the nearest visible planet.
-	4th return value 'val' will be 0 if no planets are visible.
-	
 		TrackPlanet(int planetID, double x, double y, double z, double lat, double lon)
 			returns [ double x, double y, double z, double val ]
 	

@@ -50,7 +50,7 @@ namespace PocketObservatoryLibrary
                     output = GetPlanet(firstParam);
                     break;
                 case "trackplanet":
-                    int i = 0;
+                    int i = 1;
                     output = TrackPlanet(firstParam, parmy[i++], parmy[i++], parmy[i++], parmy[i++], parmy[i++]);
                     break;
             }
