@@ -1,20 +1,17 @@
 import * as React from 'react';
-import { Text, View, StyleSheet,TouchableOpacity,Image } from 'react-native';
+import { Text, View, StyleSheet, FlatList } from 'react-native';
 import Constants from 'expo-constants';
+import PlanetCard from '../components/PlanetCard';
 
-// or any pure javascript modules available in npm
 
-export default function VisiblePlanets() {
+export default function VisiblePlanets( {planets} ) {
+  console.log(planets);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Visible Planets</Text>
-      <TouchableOpacity style = {styles.button}>
-      <View style={styles.itemContainer}>
-        <Text style={styles.itemTitle}>Item Title </Text> 
-        <Text style={styles.itemDescription}> Item Description </Text>
-      </View>
-    </TouchableOpacity>
-
+      <FlatList
+      data = {planets}
+      renderItem = {({item: planet}) => (<PlanetCard planet = {planet}/>)}/>
     </View>
   );
 }

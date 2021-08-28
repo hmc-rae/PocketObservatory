@@ -1,4 +1,7 @@
 {
   "name": "pocket-observatory",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "dependencies": {
+    "@react-navigation/stack": "^6.0.7"
+  }
 }
