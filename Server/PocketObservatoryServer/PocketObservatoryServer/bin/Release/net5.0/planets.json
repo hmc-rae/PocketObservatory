@@ -1,0 +1,97 @@
+{
+  "planets": [
+    {
+      "name": "Mercury",
+      "ignore": false,
+      "order": 1,
+      "meanDistance": 57909227000,
+      "OrbitalPeriod": 0.240846,
+      "orbitalOffset": 0.5182671509,
+      "additionalData": {
+        "colorScheme": "#000000",
+        "perihelion": 46001200000,
+        "aphelion": 69816900000,
+        "eccentricity": 0.205360,
+        "inclination": 7.005,
+        "radius": 2439700,
+        "description": "Mercury: the smallest planet in the Solar System.\nThe closest planet to the Sun, Mercury is baked on one side with surface temperatures reaching over 400 degrees Celsius, and well below freezing on the other.\nMercury whips around the Sun with an orbital period of 88 days."
+      }
+    },
+
+    {
+      "name": "Venus",
+      "ignore": false,
+      "order": 2,
+      "radius": 6051800,
+      "meanDistance": 108209475000,
+      "OrbitalPeriod": 0.615198,
+      "orbitalOffset": -1.605365007,
+      "additionalData": {
+        "colorScheme": "#000000",
+        "perihelion": 108939000000,
+        "aphelion": 108477000000,
+        "eccentricity": 0.006772,
+        "inclination": 3.39458,
+        "radius": 6051800,
+        "description": "Venus: the sister planet to Earth.\nThe second planet from the Sun. Venus is blanketed with dense clouds, trapping all heat in a giant pressure cooker, with pressures over 80 times Earth normal and average temperatures of 400 degrees celsius.\nSoviet missions to land a probe on the surface of Venus have only lasted an hour and a half at most upon landing."
+      }
+    },
+
+    {
+      "name": "Earth",
+      "ignore": true,
+      "order": 3,
+      "radius": 6371000,
+      "meanDistance": 149600000000,
+      "OrbitalPeriod": 1.0,
+      "orbitalOffset": 0.0,
+      "additionalData": {
+        "colorScheme": "#000000",
+        "perihelion": 147095000000,
+        "aphelion": 152100000000,
+        "eccentricity": 0.0167086,
+        "inclination": 7.155,
+        "radius": 6371000,
+        "description": "Earth: the only planet that we know to have life.\nThe third planet from the Sun, Earth exists in the 'Goldilocks' zone where life is possible. The most studied planet in the universe and the birthplace of Humankind.\nDue to the greed of few, Earth is at risk of great runaway climate disaster. Research what you can do to make change to help preserve the future."
+      }
+    },
+
+    {
+      "name": "Mars",
+      "ignore": false,
+      "order": 4,
+      "radius": 3389500,
+      "meanDistance": 144800000000,
+      "OrbitalPeriod": 1.8805,
+      "orbitalOffset": 0.8623168769,
+      "additionalData": {
+        "colorScheme": "#000000",
+        "perihelion": 206700000000,
+        "aphelion": 249200000000,
+        "eccentricity": 0.0934,
+        "inclination": 1.850,
+        "radius": 3389500,
+        "description": "Mars: the red planet.\nThe fourth planet from the Sun, Mars is cold, dusty, empty, and the primary target for Human colonization. Should we beat the challenges that prevent us from settling there, it will be the first step to the next Space Race.\nMars is commonly thought to once have had running water on the surface, and many believe that with Human intervention, it may well again."
+      }
+    },
+
+    {
+      "name": "Jupiter",
+      "ignore": false,
+      "order": 5,
+      "radius": 69911000,
+      "meanDistance": 778500000000,
+      "OrbitalPeriod": 11.862,
+      "orbitalOffset": 1.04263476,
+      "additionalData": {
+        "colorScheme": "#000000",
+        "perihelion": 740520000000,
+        "aphelion": 816620000000,
+        "eccentricity": 0.0489,
+        "inclination": 1.303,
+        "radius": 69911000,
+        "description": "Jupiter: the fifth planet from the Sun.\nJupiter is a gas giant, home to vicious winds and 79 satellites, with four major moons. Its moon Europa is a likely candidate for extraterrestrial life due to the possibility of oxygen rich oceans underneath the icy surface.\nJupiter's mass is great enough that it makes a noticeable affect on the Sun's path through the universe."
+      }
+    }
+  ]
+}

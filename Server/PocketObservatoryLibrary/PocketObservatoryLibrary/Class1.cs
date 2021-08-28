@@ -14,6 +14,12 @@ namespace PocketObservatoryLibrary
         //I need to touch grass.
         public static string BackendInterp(string query)
         {
+            if (DateTimeOffset.Now.ToUnixTimeSeconds() - Globals.lastUpdate > 300)
+            {
+                UpdatePlanets();
+                Globals.lastUpdate = DateTimeOffset.Now.ToUnixTimeSeconds();
+            }
+
             string[] words = Functions.disect(query);
             double[] parmy = new double[8];
             for (int n = 0; n < 8; n++)
@@ -43,6 +49,10 @@ namespace PocketObservatoryLibrary
                 case "getplanet":
                     output = GetPlanet(firstParam);
                     break;
+                case "trackplanet":
+                    int i = 0;
+                    output = TrackPlanet(firstParam, parmy[i++], parmy[i++], parmy[i++], parmy[i++], parmy[i++]);
+                    break;
             }
             return output;
         }
@@ -56,6 +66,7 @@ namespace PocketObservatoryLibrary
         /// </summary>
         public static void Initialize()
         {
+            Globals.lastUpdate = DateTimeOffset.Now.ToUnixTimeSeconds();
             Functions.setupPlanets();
             for (int n = 0; n < Globals.planetCore.planets.Count; n++)
             {
@@ -133,7 +144,7 @@ namespace PocketObservatoryLibrary
         }
 
         /// <summary>
-        /// Returns rotational instructions to find a specific visible planet.
+        /// Should return rotational instructions to find a specific visible planet. #0 is compass, #1 is elev
         /// </summary>
         /// <param name="planetID"></param>
         /// <param name="x"></param>
@@ -142,9 +153,25 @@ namespace PocketObservatoryLibrary
         /// <param name="lat"></param>
         /// <param name="lon"></param>
         /// <returns></returns>
-        public static double[] TrackPlanet(int planetID, double x, double y, double z, double lat, double lon)
+        public static string TrackPlanet(int planetID, double x, double y, double z, double lat, double lon)
         {
-            return null;
+            Functions.getPlanetPosition(Globals.planetCore.planets[planetID]);
+            double[] planetPos = Globals.earthReference.position;
+            double[] targetPos = Globals.planetCore.planets[planetID].position;
+            double[] personPos = Functions.get3DPosition(lat, lon, Globals.earthReference);
+
+            double[] anglePerson = Functions.getAngles(planetPos, personPos);
+            double[] angleTarget = Functions.getAngles(planetPos, targetPos);
+
+            double[] oAngles = { anglePerson[0] - angleTarget[0], anglePerson[1] - angleTarget[1] };
+            double distanceTarget = Functions.getDistance(planetPos, targetPos);
+
+            double[] result = { 0, 0 };
+            result[0] = -Math.Atan2(oAngles[1], oAngles[0]);
+            result[1] = Math.Sqrt(Math.Pow(oAngles[0], 2) + Math.Pow(oAngles[1], 2)) - (Math.PI / 2);
+
+            string jsonString = JsonConvert.SerializeObject(result);
+            return jsonString;
         }
     }
 
@@ -348,7 +375,7 @@ namespace PocketObservatoryLibrary
         }
 
         /// <summary>
-        /// Gets angle the user is facing in the universal 0.
+        /// Gets angle the user is facing in the universal 0. Should work.
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
@@ -358,14 +385,19 @@ namespace PocketObservatoryLibrary
         /// <returns></returns>
         public static double[] getFixedAngles(double x, double y, double z, double lat, double lon)
         {
-            double[] data = { 0, 0, 0 };
-            //We're assuming x&y is compass direction, with Y being north/south, x being east/west. z is elevation so we worry about it later. 
-            double[] forwardVector = { x, y, z };
-            data[0] = (x * x) + (y * y) + (z * z);
-            
+            double[] normalizedVector = { 0, 0, 0 };
+            double[] abnormalVector = { x, y, z };
 
-            //1 is how far left/right cam is facing
-            return data;
+            return normalizedVector;
+        }
+
+        public static double[] getAngles(double[] a, double[] b)
+        {
+            double[] result = { 0, 0 };
+            double r = getDistance(a, b);
+            result[0] = Math.Atan2(b[1] - a[1], b[0] - a[0]); //pan
+            result[1] = Math.Atan2(r, b[2] - a[2]);           //yaw
+            return result;
         }
 
         public static double getDistance(double[] a, double[] b)
@@ -390,6 +422,7 @@ namespace PocketObservatoryLibrary
 
     public static class Globals
     {
+        public static long lastUpdate = -1;
         public static Objects.PlanetCore planetCore;
         public static Objects.PlanetData earthReference;
     }
