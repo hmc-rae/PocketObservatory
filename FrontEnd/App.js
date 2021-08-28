@@ -13,7 +13,6 @@ const Tab = createMaterialBottomTabNavigator();
 const App = () => {
 
   return (
-    <>
       <NavigationContainer>
         <Tab.Navigator 
         initialRouteName = "Camera">
@@ -25,11 +24,7 @@ const App = () => {
           component = {AllPlanets}/>
         </Tab.Navigator>
       </NavigationContainer>
-    </>
   );
-  // <View>
-  //   <Text>hi</Text>
-  // </View>);
 
 };
 
@@ -42,3 +37,4 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
