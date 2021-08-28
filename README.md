@@ -9,7 +9,9 @@ References:
 
 										EXTERNAL LIBRARIES
 https://expo.dev/							Expo. Frontend is written on it.
+
 https://github.com/JamesNK/Newtonsoft.Json				JSON implementation for C#, used in backend to help storing & sending data to frontend.
+
 https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-5.0	ASP.NET, used as a 'middleman' between the strict backend and the frontend.
 
 
@@ -19,10 +21,15 @@ https://www.theplanetstoday.com/ 					(verification purposes)
 https://solarsystem.nasa.gov/planets/overview/ 		(data sourcing - planet data such as orbit distance, period)
 
 https://en.wikipedia.org/wiki/Mars
+
 https://en.wikipedia.org/wiki/Jupiter
+
 https://en.wikipedia.org/wiki/Earth
+
 https://en.wikipedia.org/wiki/Venus
+
 https://en.wikipedia.org/wiki/Mercury_(planet)
+
 													(all really good sources of hard data to set up the equations)
 
 http://clowder.net/hop/railroad/sched.html			(very useful source of Hohmann transfer windows)
