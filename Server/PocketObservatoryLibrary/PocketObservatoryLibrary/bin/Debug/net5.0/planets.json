@@ -18,6 +18,16 @@
       "meanDistance": 144800000000,
       "OrbitalPeriod": 1.8805,
       "orbitalOffset": 0.8623168769
+    },
+
+    {
+      "name": "Jupiter",
+      "ignore": false,
+      "order": 5,
+      "radius": 69911000,
+      "meanDistance": 778500000000,
+      "OrbitalPeriod": 11.862,
+      "orbitalOffset": 1.04263476
     }
   ]
 }

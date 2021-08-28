@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "bGod11rjLfcJ38UNXv5kfi0gRNeepd+7k8i//0I/OnHSqBjVEqiScUr45UoBsv7BgklVaEDUt6RoAEhjIHq3rg==",
+  "dgSpecHash": "bzSGpHZ01vJLugsqwqHK2oadmORJsLhI9Vnt6q0EgWiuYB3ivTW+aMtSS+KuHqnAGbjVCoWF23XaSqvivmpmEw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Arden Gourlay\\Documents\\PocketObservatory\\POL_tester\\POL_tester\\POL_tester.csproj",
+  "projectFilePath": "D:\\PROJECTS\\SocksOn2021\\Server\\POL_tester\\POL_tester\\POL_tester.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Arden Gourlay\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\Harris McRae\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

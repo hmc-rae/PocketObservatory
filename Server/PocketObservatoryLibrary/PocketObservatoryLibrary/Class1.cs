@@ -10,7 +10,7 @@ namespace PocketObservatoryLibrary
     {
         public static String test()
         {
-            return $"{Globals.planetCore.planets[1].currentRadians}";
+            return $"{Globals.planetCore.planets[0].currentRadians}";
         }
 
         /// <summary>
@@ -205,7 +205,7 @@ namespace PocketObservatoryLibrary
         }
         public static void setupPlanets()
         {
-            StreamReader r = new StreamReader("/PockerObservatoryLibrary/planets.json");
+            StreamReader r = new StreamReader("planets.json");
             String temp = r.ReadToEnd();
             r.Close();
             Globals.planetCore = JsonConvert.DeserializeObject<Objects.PlanetCore>(temp);
@@ -218,7 +218,8 @@ namespace PocketObservatoryLibrary
 
             for (int n = 0; n < Globals.planetCore.planets.Count; n++)
             {
-                Globals.planetCore.planets[n].currentRadians = normalize(Globals.planetCore.planets[n].orbitalOffset + ((Globals.planetCore.planets[n].OrbitalPeriod * yearsSince) * Math.PI));
+                Globals.planetCore.planets[n].currentRadians = normalize(Globals.planetCore.planets[n].orbitalOffset + ((yearsSince / Globals.planetCore.planets[n].OrbitalPeriod) * Math.PI));
+                Globals.planetCore.planets[n].currentRadians += Constants.CorrectionalConst;
             }
         }
 
@@ -247,6 +248,8 @@ namespace PocketObservatoryLibrary
     public static class Constants
     {
         public const long LocalEpoch = 1514725200;
+        public const long YearSecondsShort = 31536000;
+        public const double CorrectionalConst = 0.0872665;
         public const long YearSeconds = 31557600;
     }
 
