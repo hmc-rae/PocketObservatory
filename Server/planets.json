@@ -4,7 +4,8 @@
       "name": "Earth",
       "ignore": true,
       "order": 3,
-      "meanDistance": 0,
+      "radius": 6371000,
+      "meanDistance": 149600000000,
       "OrbitalPeriod": 1.0,
       "orbitalOffset": 0.0
     },
@@ -13,9 +14,20 @@
       "name": "Mars",
       "ignore": false,
       "order": 4,
-      "meanDistance": 0,
+      "radius": 3389500,
+      "meanDistance": 144800000000,
       "OrbitalPeriod": 1.8805,
       "orbitalOffset": 0.8623168769
+    },
+
+    {
+      "name": "Jupiter",
+      "ignore": false,
+      "order": 5,
+      "radius": 69911000,
+      "meanDistance": 778500000000,
+      "OrbitalPeriod": 11.862,
+      "orbitalOffset": 1.04263476
     }
   ]
 }

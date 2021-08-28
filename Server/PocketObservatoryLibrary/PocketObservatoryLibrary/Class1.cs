@@ -22,6 +22,10 @@ namespace PocketObservatoryLibrary
             for (int n = 0; n < Globals.planetCore.planets.Count; n++)
             {
                 Globals.planetCore.planets[n].id = n;
+                if (Globals.planetCore.planets[n].name == "Earth")
+                {
+                    Globals.earthReference = Globals.planetCore.planets[n];
+                }
             }
             UpdatePlanets();
         }
@@ -38,9 +42,31 @@ namespace PocketObservatoryLibrary
             }
         }
 
-        public static List<Objects.PlanetData> BuildVisible(double lat, double lon)
+        /// <summary>
+        /// Returns a JSON string with general information about all planets.
+        /// </summary>
+        /// <returns></returns>
+        public static string GetAll(double lat, double lon)
         {
-            return null;
+            bool[] visible = Functions.FindVisible(lat, lon);
+            string jsonString = "{\"allPlanets\":[";
+            for (int n = 0; n < Globals.planetCore.planets.Count; n++)
+            {
+                if (n != 0)
+                {
+                    jsonString += ",";
+                }
+                jsonString += "{\"name\":\"" + Globals.planetCore.planets[n].name;
+                jsonString += "\",\"refID\":" + Globals.planetCore.planets[n].id;
+                jsonString += ",\"order\":" + Globals.planetCore.planets[n].order;
+                jsonString += ",\"color\":\"" + Globals.planetCore.planets[n].additionalData.colorScheme;
+                jsonString += "\",\"visible\":";
+                jsonString += visible[n] ? "true" : "false";
+                jsonString += "}";
+            }
+            jsonString += "]}";
+
+            return jsonString;
         }
 
         /// <summary>
@@ -54,7 +80,7 @@ namespace PocketObservatoryLibrary
         /// <returns></returns>
         public static double[] TrackPlanet(double x, double y, double z, double lat, double lon)
         {
-            List<Objects.PlanetData> visible = BuildVisible(lat, lon);
+            List<Objects.PlanetData> visible = Functions.BuildVisible(lat, lon);
             return null;
         }
 
@@ -140,15 +166,59 @@ namespace PocketObservatoryLibrary
         {
             public string colorScheme; //For potential UI elements.
 
+            public string perihelion;
+            public string aphelion;
+
+            public string eccentricity;
+            public string inclination;
+
+            public string radius;
+
+
             public PlanetExtension()
             {
-                colorScheme = "#000000";
+                
             }
         }
     }
     
     public static class Functions
     {
+        public static bool[] FindVisible(double lat, double lon)
+        {
+            bool[] visible = new bool[Globals.planetCore.planets.Count];
+            double[] position = get3DPosition(lat, lon, Globals.earthReference);
+
+            for (int n = 0; n < Globals.planetCore.planets.Count; n++)
+            {
+                double earthDistance = getDistance(Globals.planetCore.planets[n].position, Globals.earthReference.position);
+                double meDistance = getDistance(Globals.planetCore.planets[n].position, position);
+
+                visible[n] = false;
+                if (meDistance < earthDistance)
+                {
+                    visible[n] = true;
+                }
+            }
+
+            return visible;
+        }
+
+        public static List<Objects.PlanetData> BuildVisible(double lat, double lon)
+        {
+            bool[] visible = FindVisible(lat, lon);
+            List<Objects.PlanetData> visiblePlanets = new List<Objects.PlanetData>();
+            for (int n = 0; n < visible.Length; n++)
+            {
+                if (visible[n])
+                {
+                    visiblePlanets.Add(Globals.planetCore.planets[n]);
+                }
+            }
+
+            return visiblePlanets;
+        }
+
         public static double[] get3DPosition(double lat, double lon, Objects.PlanetData planet)
         {
             double[] pos = get3DVector(lat, lon, planet);
@@ -173,7 +243,15 @@ namespace PocketObservatoryLibrary
 
             //substitute longitude - timezones are more relevant (if we assume that at midday you're facing the sun)
             //used for x/y
-            lon = (Math.PI / 180) * (((DateTimeOffset.Now.Hour - 12) * 15) + ((180 / Math.PI) * normalize((Math.PI / 2) - planet.currentRadians)));
+            //lon = (Math.PI / 180) * (((DateTimeOffset.Now.Hour - 12) * 15) + ((180 / Math.PI) * normalize((Math.PI / 2) - planet.currentRadians)));
+            double oldLon = lon;
+            double tz = (Math.Abs(lon) - 7.5) / 15;
+            var timeGMT = DateTime.UtcNow;
+            double utctz = timeGMT.Hour + (double)(timeGMT.Minute / 60);
+            utctz += tz * lon < 0 ? -1 : 1;
+            utctz = (utctz % 24) - 12;
+
+            lon = (utctz * 0.261799) + normalize((Math.PI / 2) - planet.currentRadians);
 
             //used for elev
             lat = (Math.PI / 180) * lat; //convert to radians too
@@ -243,6 +321,11 @@ namespace PocketObservatoryLibrary
             //1 is how far left/right cam is facing
             return data;
         }
+
+        public static double getDistance(double[] a, double[] b)
+        {
+            return Math.Sqrt(Math.Pow(a[0] - b[0], 2) + Math.Pow(a[1] - b[1], 2) + Math.Pow(a[0] - b[0], 2));
+        }
     }
 
     public static class Constants
@@ -256,5 +339,6 @@ namespace PocketObservatoryLibrary
     public static class Globals
     {
         public static Objects.PlanetCore planetCore;
+        public static Objects.PlanetData earthReference;
     }
 }
