@@ -1,0 +1,42 @@
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\bin\Debug\net5.0\POL_tester.exe
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\bin\Debug\net5.0\POL_tester.deps.json
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\bin\Debug\net5.0\POL_tester.runtimeconfig.json
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\bin\Debug\net5.0\POL_tester.runtimeconfig.dev.json
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\bin\Debug\net5.0\POL_tester.dll
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\bin\Debug\net5.0\ref\POL_tester.dll
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\bin\Debug\net5.0\POL_tester.pdb
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.csproj.AssemblyReference.cache
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.AssemblyInfoInputs.cache
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.AssemblyInfo.cs
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.csproj.CoreCompileInputs.cache
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.dll
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\obj\Debug\net5.0\ref\POL_tester.dll
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.pdb
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.genruntimeconfig.cache
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\bin\Debug\net5.0\PocketObservatoryLibrary.dll
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.csproj.CopyComplete
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\bin\Debug\net5.0\planets.json
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\bin\Debug\net5.0\PocketObservatoryLibrary.pdb
+D:\PROJECTS\SocksOn2021\POL_tester\POL_tester\bin\Debug\net5.0\Newtonsoft.Json.dll
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\bin\Debug\net5.0\POL_tester.exe
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\bin\Debug\net5.0\POL_tester.deps.json
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\bin\Debug\net5.0\POL_tester.runtimeconfig.json
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\bin\Debug\net5.0\POL_tester.runtimeconfig.dev.json
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\bin\Debug\net5.0\POL_tester.dll
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\bin\Debug\net5.0\ref\POL_tester.dll
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\bin\Debug\net5.0\POL_tester.pdb
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\bin\Debug\net5.0\Newtonsoft.Json.dll
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\bin\Debug\net5.0\PocketObservatoryLibrary.dll
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\bin\Debug\net5.0\PocketObservatoryLibrary.pdb
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.csproj.AssemblyReference.cache
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.AssemblyInfoInputs.cache
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.AssemblyInfo.cs
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.csproj.CoreCompileInputs.cache
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.csproj.CopyComplete
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.dll
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\obj\Debug\net5.0\ref\POL_tester.dll
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.pdb
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\obj\Debug\net5.0\POL_tester.genruntimeconfig.cache
+c:\Users\Arden Gourlay\Documents\PocketObservatory\POL_tester\POL_tester\bin\Debug\net5.0\planets.json
