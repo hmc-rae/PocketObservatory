@@ -3,11 +3,49 @@ using System.IO;
 using System.Collections.Generic;
 
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace PocketObservatoryLibrary
 {
     public class InterfaceFunctions
     {
+        //So, funny story. I've never touched servers before.
+        //This is the best thing I can come up with at 3am in the morning.
+        //I need to touch grass.
+        public static string BackendInterp(string query)
+        {
+            string[] words = Functions.disect(query);
+            double[] parmy = new double[8];
+            for (int n = 0; n < 8; n++)
+            {
+                if (n+1 >= words.Length)
+                {
+                    break;
+                }
+                Double.TryParse(words[n + 1], out parmy[n]);
+            }
+
+            int firstParam = 0;
+            if (words.Length >= 2)
+            {
+                int.TryParse(words[1], out firstParam);
+            }
+
+            string output = "";
+            switch (words[0].ToLower())
+            {
+                case "updateplanets":
+                    UpdatePlanets();
+                    break;
+                case "getall":
+                    output = GetAll(parmy[0], parmy[1]);
+                    break;
+                case "getplanet":
+                    output = GetPlanet(firstParam);
+                    break;
+            }
+            return output;
+        }
         public static String test()
         {
             return $"{Globals.planetCore.planets[0].currentRadians}";
@@ -76,7 +114,7 @@ namespace PocketObservatoryLibrary
         /// <returns></returns>
         public static string GetPlanet(int planetID)
         {
-            return JsonConvert.SerializeObject(Globals.planetCore.planets[planetID].additionalData);
+            return JsonConvert.SerializeObject(Globals.planetCore.planets[planetID % Globals.planetCore.planets.Count].additionalData);
         }
 
         /// <summary>
@@ -333,6 +371,12 @@ namespace PocketObservatoryLibrary
         public static double getDistance(double[] a, double[] b)
         {
             return Math.Sqrt(Math.Pow(a[0] - b[0], 2) + Math.Pow(a[1] - b[1], 2) + Math.Pow(a[0] - b[0], 2));
+        }
+
+        public static string[] disect(string input)
+        {
+            string[] result = input.Split(',');
+            return result;
         }
     }
 

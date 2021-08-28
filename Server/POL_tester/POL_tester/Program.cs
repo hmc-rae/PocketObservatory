@@ -7,7 +7,7 @@ namespace POL_tester
         static void Main(string[] args)
         {
             PocketObservatoryLibrary.InterfaceFunctions.Initialize();
-            Console.WriteLine(PocketObservatoryLibrary.InterfaceFunctions.GetPlanet(2));
+            Console.WriteLine(PocketObservatoryLibrary.InterfaceFunctions.GetPlanet(1));
 
         }
     }

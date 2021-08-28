@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "dmcE9APSaNPFt/lg1OXqq7LK4SK1Us5mlj0mUEwhNaI3TbvBG1zv/EjQ8d661FF79n6OaxsN88gWMcekyNspmg==",
+  "success": true,
+  "projectFilePath": "D:\\PROJECTS\\SocksOn2021\\Server\\PocketObservatoryServer\\PocketObservatoryServer\\PocketObservatoryServer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Harris McRae\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
