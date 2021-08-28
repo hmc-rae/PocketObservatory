@@ -191,11 +191,15 @@ namespace PocketObservatoryLibrary
 
             for (int n = 0; n < Globals.planetCore.planets.Count; n++)
             {
+                if (Globals.planetCore.planets[n].name == "Earth")
+                {
+                    continue;
+                }
                 double earthDistance = getDistance(Globals.planetCore.planets[n].position, Globals.earthReference.position);
                 double meDistance = getDistance(Globals.planetCore.planets[n].position, position);
 
                 visible[n] = false;
-                if (meDistance < earthDistance)
+                if (meDistance > earthDistance)
                 {
                     visible[n] = true;
                 }
@@ -241,24 +245,23 @@ namespace PocketObservatoryLibrary
                 lat = lat;
             }
 
+            double angleToSun = (Math.PI / 2) - planet.currentRadians;
+
             //substitute longitude - timezones are more relevant (if we assume that at midday you're facing the sun)
             //used for x/y
             //lon = (Math.PI / 180) * (((DateTimeOffset.Now.Hour - 12) * 15) + ((180 / Math.PI) * normalize((Math.PI / 2) - planet.currentRadians)));
-            double oldLon = lon;
-            double tz = (Math.Abs(lon) - 7.5) / 15;
-            var timeGMT = DateTime.UtcNow;
-            double utctz = timeGMT.Hour + (double)(timeGMT.Minute / 60);
-            utctz += tz * lon < 0 ? -1 : 1;
-            utctz = (utctz % 24) - 12;
-
-            lon = (utctz * 0.261799) + normalize((Math.PI / 2) - planet.currentRadians);
+            double n = DateTime.UtcNow.Hour;
+            n -= 2;
+            n *= 0.261799;
+            n = normalizeNoFlip(angleToSun + n);
+            lon = n + (lon * (Math.PI / 180));
 
             //used for elev
-            lat = (Math.PI / 180) * lat; //convert to radians too
+            lat = lat * (Math.PI / 180); //convert to radians too
 
-            pos[0] += (Math.Sin(lon) * 1) * Math.Cos(lat);
-            pos[1] += (Math.Cos(lon) * 1) * Math.Cos(lat);
-            pos[2] += Math.Sin(lat) * 1;
+            pos[0] = (Math.Sin(lon) * 1) * Math.Cos(lat);
+            pos[1] = (Math.Cos(lon) * 1) * Math.Cos(lat);
+            pos[2] = Math.Sin(lat) * 1;
 
             return pos;
         }
@@ -273,12 +276,17 @@ namespace PocketObservatoryLibrary
 
         public static double normalize(double value)
         {
-            while (value < -Math.PI) { value = (2 * Math.PI) + value; }
-            while (value > Math.PI) { value = -(2 * Math.PI) + value; }
+            value = normalizeNoFlip(value);
             if (value < 0)
             {
                 value = Math.PI + value;
             }
+            return value;
+        }
+        public static double normalizeNoFlip(double value)
+        {
+            while (value < -Math.PI) { value = (2 * Math.PI) + value; }
+            while (value > Math.PI) { value = -(2 * Math.PI) + value; }
             return value;
         }
         public static void setupPlanets()
