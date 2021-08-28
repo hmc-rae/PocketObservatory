@@ -1,6 +1,16 @@
 {
   "planets": [
     {
+      "name": "Venus",
+      "ignore": false,
+      "order": 2,
+      "radius": 6051800,
+      "meanDistance": 108209475000,
+      "OrbitalPeriod": 0.615198,
+      "orbitalOffset": -1.605365007
+    },
+
+    {
       "name": "Earth",
       "ignore": true,
       "order": 3,

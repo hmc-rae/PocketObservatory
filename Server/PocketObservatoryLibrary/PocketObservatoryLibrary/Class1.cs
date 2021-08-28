@@ -238,7 +238,7 @@ namespace PocketObservatoryLibrary
             Boolean latNeg = lat < 0;
             if (latNeg)
             {
-                lat = -lat;
+                lat = lat;
             }
 
             //substitute longitude - timezones are more relevant (if we assume that at midday you're facing the sun)
