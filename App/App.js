@@ -25,9 +25,6 @@ const App = () => {
         </Tab.Navigator>
       </NavigationContainer>
   );
-  // <View>
-  //   <Text>hi</Text>
-  // </View>);
 
 };
 
