@@ -70,6 +70,16 @@ namespace PocketObservatoryLibrary
         }
 
         /// <summary>
+        /// Returns a JSON string with detailed information about one of the planets as per ID.
+        /// </summary>
+        /// <param name="planetID"></param>
+        /// <returns></returns>
+        public static string GetPlanet(int planetID)
+        {
+            return JsonConvert.SerializeObject(Globals.planetCore.planets[planetID].additionalData);
+        }
+
+        /// <summary>
         /// Returns rotational instructions to find the nearest visible planet.
         /// </summary>
         /// <param name="x"></param>
@@ -116,7 +126,6 @@ namespace PocketObservatoryLibrary
         public class PlanetData
         {
             public double meanDistance;  //Average distance from the sun. Once we get set up, I'll expand it to include perihelion and aphelion.
-            public double radius;
             private double orbitalPeriod; //Time it takes to orbit the sun once, in earth years (365.25 days)
             private double orbitalPeriodSeconds; //Time in seconds to orbit the sun once.
 
@@ -153,11 +162,6 @@ namespace PocketObservatoryLibrary
             public double[] position;
 
             public PlanetExtension additionalData; //Contains all extra data.
-
-            public PlanetData()
-            {
-                additionalData = new PlanetExtension();
-            }
         }
         /// <summary>
         /// An extension pack that stores information about the Planet.
@@ -166,19 +170,15 @@ namespace PocketObservatoryLibrary
         {
             public string colorScheme; //For potential UI elements.
 
-            public string perihelion;
-            public string aphelion;
+            public double perihelion;
+            public double aphelion;
 
-            public string eccentricity;
-            public string inclination;
+            public double eccentricity;
+            public double inclination;
 
-            public string radius;
+            public double radius;
 
-
-            public PlanetExtension()
-            {
-                
-            }
+            public string description;
         }
     }
     
@@ -228,7 +228,7 @@ namespace PocketObservatoryLibrary
             double[] pos = get3DVector(lat, lon, planet);
             for (int n = 0; n < 3; n++)
             {
-                pos[n] *= planet.radius;
+                pos[n] *= planet.additionalData.radius;
                 pos[n] += planet.position[n];
             }
 
