@@ -1,0 +1,11 @@
+{
+  "planets": [
+    {
+      "name": "Earth",
+      "ignore": true,
+      "meanDistance": 0,
+      "OrbitalPeriod": 1.0,
+      "orbitalOffset": 0.0
+    }
+  ]
+}

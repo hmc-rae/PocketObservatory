@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "RtveE4EelmE8H7pWytxFgzWVBQXnZbJ3dz2fNuKNNchBYs9N9T5pdmsgd9d/lgXsaiAdCEhQrCJoUibEw8pLPw==",
+  "dgSpecHash": "cUCTg1cFGNpNAi+/QZg70ldc7bd1HwAwbvoM8CmM7ToomfecHRUWZRo7u7P04UmbuN+dtKBhXhe8hOuDAsyYMw==",
   "success": true,
   "projectFilePath": "D:\\PROJECTS\\SocksOn2021\\PocketObservatoryLibrary\\PocketObservatoryLibrary\\PocketObservatoryLibrary.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Harris McRae\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

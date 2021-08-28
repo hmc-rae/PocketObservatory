@@ -10,3 +10,4 @@ D:\PROJECTS\SocksOn2021\PocketObservatoryLibrary\PocketObservatoryLibrary\obj\De
 D:\PROJECTS\SocksOn2021\PocketObservatoryLibrary\PocketObservatoryLibrary\obj\Debug\net5.0\PocketObservatoryLibrary.dll
 D:\PROJECTS\SocksOn2021\PocketObservatoryLibrary\PocketObservatoryLibrary\obj\Debug\net5.0\ref\PocketObservatoryLibrary.dll
 D:\PROJECTS\SocksOn2021\PocketObservatoryLibrary\PocketObservatoryLibrary\obj\Debug\net5.0\PocketObservatoryLibrary.pdb
+D:\PROJECTS\SocksOn2021\PocketObservatoryLibrary\PocketObservatoryLibrary\bin\Debug\net5.0\planets.json

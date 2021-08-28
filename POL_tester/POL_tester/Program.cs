@@ -6,7 +6,8 @@ namespace POL_tester
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(PocketObservatoryLibrary.Class1.test());
+            PocketObservatoryLibrary.InterfaceFunctions.Initialize("planets.json");
+            Console.WriteLine(PocketObservatoryLibrary.InterfaceFunctions.test());
         }
     }
 }
