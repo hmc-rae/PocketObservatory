@@ -3,7 +3,7 @@ import { StyleSheet, Text, View} from 'react-native';
 import {NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
 
-import Camera from './src/views/Camera';
+import Camera from './src/views/Observatory';
 import VisiblePlanets from './src/views/VisiblePlanets';
 import AllPlanets from './src/views/AllPlanets';
 
@@ -15,10 +15,10 @@ const App = () => {
   return (
       <NavigationContainer>
         <Tab.Navigator 
-        initialRouteName = "Camera">
+        initialRouteName = "Observatory">
           <Tab.Screen name = "VisiblePlanets"
           component = {VisiblePlanets}/>
-        <Tab.Screen name = "Camera"
+        <Tab.Screen name = "Observatory"
           component = {Camera}/>
         <Tab.Screen name = "AllPlanets"
           component = {AllPlanets}/>
