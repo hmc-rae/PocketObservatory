@@ -14,6 +14,10 @@ https://github.com/JamesNK/Newtonsoft.Json				JSON implementation for C#, used i
 
 https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-5.0	ASP.NET, used as a 'middleman' between the strict backend and the frontend.
 
+https://dashboard.heroku.com/						Heroku, hosts the backend.
+
+You can visit the backend by going to 
+
 
 										RESEARCH
 https://www.theplanetstoday.com/ 					(verification purposes)
