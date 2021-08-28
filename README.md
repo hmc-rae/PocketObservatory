@@ -18,7 +18,7 @@ https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-5.0	ASP.NET, used 
 										RESEARCH
 https://www.theplanetstoday.com/ 					(verification purposes)
 
-https://solarsystem.nasa.gov/planets/overview/ 		(data sourcing - planet data such as orbit distance, period)
+https://solarsystem.nasa.gov/planets/overview/ 				(data sourcing - planet data such as orbit distance, period)
 
 https://en.wikipedia.org/wiki/Mars
 
@@ -28,15 +28,12 @@ https://en.wikipedia.org/wiki/Earth
 
 https://en.wikipedia.org/wiki/Venus
 
-https://en.wikipedia.org/wiki/Mercury_(planet)
+https://en.wikipedia.org/wiki/Mercury_(planet)				(all really good sources of hard data to set up the equations)
 
-													(all really good sources of hard data to set up the equations)
-
-http://clowder.net/hop/railroad/sched.html			(very useful source of Hohmann transfer windows)
+http://clowder.net/hop/railroad/sched.html				(very useful source of Hohmann transfer windows)
 
 https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-5.0&tabs=visual-studio
-								(yay servers)
 								
-https://www.youtube.com/channel/UCx3i14jrDRz8HR1zWxX_0OQ	(yay amazon ec2 server)
+https://www.youtube.com/channel/UCx3i14jrDRz8HR1zWxX_0OQ		(guides that helped set up servers)
 
 
