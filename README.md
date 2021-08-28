@@ -8,8 +8,9 @@ Figma is https://www.figma.com/file/6tf4Qxm5af5aqntFK2K5Zz/Untitled?node-id=0%3A
 References:
 
 										EXTERNAL LIBRARIES
-https://github.com/JamesNK/Newtonsoft.Json			JSON implementation for C#, used in backend.
-https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-5.0	ASP.NET, used for server stuff.
+https://expo.dev/							Expo. Frontend is written on it.
+https://github.com/JamesNK/Newtonsoft.Json				JSON implementation for C#, used in backend to help storing & sending data to frontend.
+https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-5.0	ASP.NET, used as a 'middleman' between the strict backend and the frontend.
 
 
 										RESEARCH
