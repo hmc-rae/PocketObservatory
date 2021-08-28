@@ -23,3 +23,10 @@ https://en.wikipedia.org/wiki/Mercury_(planet)
 													(all really good sources of hard data to set up the equations)
 
 http://clowder.net/hop/railroad/sched.html			(very useful source of Hohmann transfer windows)
+
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-5.0&tabs=visual-studio
+								(yay servers)
+								
+https://www.youtube.com/channel/UCx3i14jrDRz8HR1zWxX_0OQ	(yay amazon ec2 server)
+
+
